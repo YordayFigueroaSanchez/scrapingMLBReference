@@ -26,7 +26,7 @@ public class ScrapingMLBReference {
 	public static void main(String[] args) throws ParserConfigurationException, TransformerConfigurationException {
 		// TODO Auto-generated method stub
 
-		String url = "https://www.laligafantasymarca.com/match/1/7/cd-leganes-vs-c-a-osasuna";
+		String url = "https://www.basketball-reference.com/boxscores/202001310BRK.html";
 
 		String file = "jornada21.html";
 		int contador = 0;
@@ -80,7 +80,7 @@ public class ScrapingMLBReference {
 		try {
 			//writer = new BufferedWriter(new FileWriter(ruta + nombreFichero + ".xml"));
 			 writer = new BufferedWriter
-				    (new OutputStreamWriter(new FileOutputStream(ruta + nombreFichero + "-jornada-" + posJornada + ".xml"), StandardCharsets.UTF_8));
+				    (new OutputStreamWriter(new FileOutputStream(ruta + nombreFichero + ".xml"), StandardCharsets.UTF_8));
 			//System.out.println(jornadaElement.outerHtml());
 			writer.write(jornadaElement.outerHtml());
 
@@ -101,6 +101,25 @@ public class ScrapingMLBReference {
 		System.out.println("File saved!");
 
 	}
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 
 	/**
 	 * Con esta método compruebo el Status code de la respuesta que recibo al hacer
