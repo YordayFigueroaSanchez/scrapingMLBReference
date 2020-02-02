@@ -47,9 +47,9 @@ public class ScrapingMLBReference {
 		
 		// elemento raiz
 //		Document doc = docBuilder.newDocument();
-		Element jornadaElement = doc.createElement("jornada");
-		doc.appendChild(jornadaElement);
-		jornadaElement.attr("nro", posJornada);
+		Element gameElement = doc.createElement("game");
+		doc.appendChild(gameElement);
+		gameElement.attr("nro", posJornada);
 
 		if (getStatusConnectionCode(url) == 200) {
 //		if (getStatusFile(file) == 1) {
@@ -59,7 +59,7 @@ public class ScrapingMLBReference {
 
 			//consultando por <div class="scorebox">
 			Elements scoreboxElements = documento.select("div.scorebox");
-			jornadaElement.attr("nro_scorebox", String.valueOf(scoreboxElements.size()));
+			gameElement.attr("nro_scorebox", String.valueOf(scoreboxElements.size()));
 //			Analizando el score del juego
 			//Elements matchesContainer = documento.select("div.matches-container__match");
 			//Elements matchesContainer = documento.select("div.match.ng-star-inserted");
@@ -86,7 +86,7 @@ public class ScrapingMLBReference {
 			 writer = new BufferedWriter
 				    (new OutputStreamWriter(new FileOutputStream(ruta + nombreFichero + ".xml"), StandardCharsets.UTF_8));
 			//System.out.println(jornadaElement.outerHtml());
-			writer.write(jornadaElement.outerHtml());
+			writer.write(gameElement.outerHtml());
 
 		} catch (IOException e) {
 			System.out.println("error");
