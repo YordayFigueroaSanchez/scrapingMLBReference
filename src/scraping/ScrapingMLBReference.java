@@ -57,6 +57,9 @@ public class ScrapingMLBReference {
 			Document documento = getHtmlDocument(url);
 //			Document documento = getHtmlFileToDocument(file);
 
+			//consultando por <div class="scorebox">
+			Elements scoreboxElements = documento.select("div.scorebox");
+			jornadaElement.attr("nro_scorebox", String.valueOf(scoreboxElements.size()));
 //			Analizando el score del juego
 			//Elements matchesContainer = documento.select("div.matches-container__match");
 			//Elements matchesContainer = documento.select("div.match.ng-star-inserted");
