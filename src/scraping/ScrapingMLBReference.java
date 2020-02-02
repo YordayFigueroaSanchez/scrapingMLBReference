@@ -32,6 +32,7 @@ public class ScrapingMLBReference {
 		int contador = 0;
 
 		File input = new File("data/" + file);
+		
 		Document doc = null;
 		try {
 			doc = Jsoup.parse(input, "UTF-8", "http://example.com/");
@@ -50,21 +51,21 @@ public class ScrapingMLBReference {
 		doc.appendChild(jornadaElement);
 		jornadaElement.attr("nro", posJornada);
 
-//		if (getStatusConnectionCode(url) == 200) {
-		if (getStatusFile(file) == 1) {
+		if (getStatusConnectionCode(url) == 200) {
+//		if (getStatusFile(file) == 1) {
 
-//			Document documento = getHtmlDocument(url);
-			Document documento = getHtmlFileToDocument(file);
+			Document documento = getHtmlDocument(url);
+//			Document documento = getHtmlFileToDocument(file);
 
 //			Analizando el score del juego
 			//Elements matchesContainer = documento.select("div.matches-container__match");
 			//Elements matchesContainer = documento.select("div.match.ng-star-inserted");
-			Elements matchesContainer = documento.select("div.match");
-			System.out.println(matchesContainer.size());
+//			Elements matchesContainer = documento.select("div.match");
+//			System.out.println(matchesContainer.size());
 
-			for (Element element : matchesContainer) {
-				jornadaElement.appendChild(extractGame2(element, doc));
-			}
+//			for (Element element : matchesContainer) {
+//				jornadaElement.appendChild(extractGame2(element, doc));
+//			}
 		}
 
 		// nombre del fichero
