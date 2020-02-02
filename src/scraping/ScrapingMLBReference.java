@@ -26,7 +26,7 @@ public class ScrapingMLBReference {
 	public static void main(String[] args) throws ParserConfigurationException, TransformerConfigurationException {
 		// TODO Auto-generated method stub
 
-		String url = "https://www.basketball-reference.com/boxscores/202001310BRK.html";
+		String url = "https://www.baseball-reference.com/boxes/HOU/HOU201910300.shtml";
 
 		String file = "jornada21.html";
 		int contador = 0;
